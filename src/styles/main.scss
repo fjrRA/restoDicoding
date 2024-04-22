@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@700&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// Variable
+$body-color: red;
+$font-family: "Roboto Condensed", sans-serif;
+$margin-center: 0 auto;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  body {
+    font-family: $font-family;
+    width: 100%;
+    height: 100%;
+
+    /* style untuk skip to content */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      padding: 8px;
+      z-index: 1;
+      list-style-type: none;
+      text-decoration: none;
+      border: none;
+      background-color: rgb(192, 220, 11);
+      color: rgb(0, 0, 0);
+      border-radius: 5px;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    header {
+      background-color: #7fffd4;
+      min-height: 70px;
+      display: block;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+
+      .header__title {
+        color: #008066;
+        text-decoration: none;
+        border: none;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 1rem;
+      }
+
+      .header__burger {
+        font-size: 3rem;
+        text-align: center;
+        margin: 10px auto;
+        display: inline-block;
+        min-width: 50px;
+        min-height: 50px;
+
+        a {
+        }
+      }
+
+      @media screen and (min-width: 603px) {
+        .header__burger {
+          display: none;
+        }
+      }
+
+      nav {
+        font-size: larger;
+
+        ul {
+          display: flex;
+          margin-top: 7.5px;
+
+          li {
+            padding: 1rem;
+            list-style-type: none;
+
+            a {
+              padding: 1rem;
+              text-decoration: none;
+              border: none;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      width: 100%;
+
+      .hero {
+        width: 100%;
+        height: 80vh;
+        position: relative;
+        background-image: url(../public/images/heros/hero-image_2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &__title {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          color: #ffffff;
+          background: #00000085;
+          line-height: 1.25em;
+
+          a {
+            position: absolute;
+            text-align: center;
+            margin: 0 auto;
+            cursor: pointer;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            background-color: #7fffd4;
+            bottom: 150px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+
+            @media screen and (max-width: map_get($grid-breakpoints,md)) {
+              padding: 10px;
+            }
+
+            @media screen and (max-width: map_get($grid-breakpoints,lg)) {
+              padding: 5px;
+            }
+          }
+
+          @media screen and (min-width: map_get($grid-breakpoints,sm)) {
+            font-size: 2rem;
+          }
+          @media screen and (min-width: map_get($grid-breakpoints,md)) {
+            font-size: 2rem;
+          }
+          @media screen and (min-width: map_get($grid-breakpoints,lg)) {
+            font-size: 2.5rem;
+          }
+
+          h1 {
+            font-size: inherit;
+            color: inherit;
+            width: 300px;
+            text-align: center;
+            @media screen and (min-width: map_get($grid-breakpoints,md)) {
+              width: 650px;
+            }
+          }
+        }
+      }
+
+      .section__title {
+        margin: 40px auto;
+        padding: 0.5rem;
+        font-size: xx-large;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+
+      .card__list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+        gap: 20px;
+
+        @media screen and (max-width: map_get($grid-breakpoints,sm)) {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+
+        @media screen and (max-width: map_get($grid-breakpoints,sm)) {
+          margin: auto;
+        }
+
+        .card {
+          margin: 0 auto;
+          position: relative;
+          width: 95%;
+          height: 100%;
+
+          background-color: #7fffd4;
+          border-radius: 5px;
+
+          .label__place {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35%;
+            height: 50px;
+            margin: 10px 20px 15px 0;
+            border-radius: 0 10px 10px 0;
+            background-color: #ffffff95;
+            color: #000000;
+            list-style: none;
+            text-decoration: none;
+            border: none;
+
+            p {
+              margin: 10px;
+              padding: 1rem;
+            }
+          }
+
+          .gambarcontent {
+            img {
+              border-radius: 5px 5px 0 0;
+              width: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          .content {
+            h3 {
+              padding: 0.75rem;
+              font-size: 1.5rem;
+
+              a {
+                margin-left: 10px;
+                display: inline-block;
+                font-size: 35px;
+                text-decoration: none;
+                border: none;
+                min-width: 50px;
+                min-height: 50px;
+                cursor: none;
+              }
+            }
+
+            h2 {
+              padding: 0.75rem;
+              font-size: 2rem;
+            }
+
+            p {
+              padding: 8px 16px;
+
+              @media screen and (max-width: map_get($grid-breakpoints,sm)) {
+                // margin-bottom: 15px;
+                // padding: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 1.5rem;
+      background: #c2f0ff;
+      color: #000;
+      text-align: center;
+    }
+  }
+}
